@@ -26,8 +26,8 @@ router.get('/bids', (req, res, next) => {
   // POST http://localhost:3000/api/bids
 router.post('/bids', (req, res, next) => {
   const theBid = new Bid({
-    store: req.body.brand,
-    price: req.body.name
+    name: req.body.brand,
+    brand: req.body.name
     // specs: req.body.specs,
     // image: req.body.image
   });
@@ -70,8 +70,8 @@ router.put('/bids/:id', (req, res, next) => {
   }
 
   const updates = {
-    store: req.body.brand,
-    price: req.body.name
+    name: req.body.brand,
+    brand: req.body.name
     // specs: req.body.specs,
     // image: req.body.image
   };

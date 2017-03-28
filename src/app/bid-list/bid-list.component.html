@@ -4,11 +4,11 @@
 
 <div class="bid-list">
   <div *ngFor="let oneBid of bids">
-    <img [src]="oneBid.image">
+    <!-- <img [src]="oneBid.image"> -->
     <h3> {{ oneBid.name }} </h3>
     <p> {{ oneBid.brand }} </p>
-    <a [routerLink]="['bid', oneBid._id]">
+    <!-- <a [routerLink]="['bid', oneBid._id]">
       View Details
-    </a>
+    </a> -->
   </div>
 </div>

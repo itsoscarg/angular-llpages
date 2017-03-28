@@ -32,7 +32,11 @@ export class BidListComponent implements OnInit {
   ngOnInit() {
     this.myBidService.getList()
       .then((bidsList) => {
+      // ngFor=number of [0,1,2,3,4];
         this.bids = bidsList;
+
+
+            console.log(this.bids);
       })
       .catch((err) => {
         this.errorMessage = 'There was an error. Try again later.';

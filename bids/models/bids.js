@@ -3,14 +3,14 @@
 const mongoose = require('mongoose');
 
 const bidsSchema = new mongoose.Schema({
-  store: {
+  brand: {
     type: String,
     required: [true, 'The brand is required']
   },
-  price: {
+  name: {
     type: String,
     required: [true, 'The price is required']
-  },
+  }
   // image: {
   //   type: String, default: ''
   // },
