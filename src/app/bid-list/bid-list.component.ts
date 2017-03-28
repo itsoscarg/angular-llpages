@@ -30,13 +30,43 @@ export class BidListComponent implements OnInit {
   constructor(private myBidService: BidService) { }
 
   ngOnInit() {
+    //adds first 4
     this.myBidService.getList()
       .then((bidsList) => {
-      // ngFor=number of [0,1,2,3,4];
-        this.bids = bidsList;
+        var list = this.bids;
+    for (var i = 0; i < 5; i++){
+      console.log(this.bids);
+      this.bids.push(bidsList[i]);
+    }
+    //timeout 3 sec
+    setTimeout(function(){
+      for (var i = 5; i < 7; i++){
+        list.push(bidsList[i]);
+      }
+
+      setTimeout(function(){
+        for (var i = 6; i < 8; i++){
+          list.push(bidsList[i]);
+        }
+      }, 3000);
+
+    },3000);
+
+    //adds next one
+
+    //
+    // setTimeout(3000);
+    //
+    // //adds next one
+    // for (var i = 6; i < 8; i++){
+    //   this.bids.push(bidsList[i]);
+    // }
+    //
+    //
 
 
-            console.log(this.bids);
+        // this.bids = bidsList;
+
       })
       .catch((err) => {
         this.errorMessage = 'There was an error. Try again later.';
