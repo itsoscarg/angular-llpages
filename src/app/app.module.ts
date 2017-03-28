@@ -4,17 +4,26 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { RouterModule } from "@angular/router";
+import { routes } from './app.routing';
+import { BidListComponent } from './bid-list/bid-list.component';
+import { BidDetailsComponent } from './bid-details/bid-details.component';
+import {BidService} from './bid.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BidListComponent,
+    BidDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [BidService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

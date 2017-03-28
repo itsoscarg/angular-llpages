@@ -1,0 +1,31 @@
+<h2> Bid Details </h2>
+
+<div class="error" *ngIf="errorMessage"> {{ errorMessage }} </div>
+
+<a routerLink="/"> Back to list </a>
+
+<div *ngIf="bid">
+  <div class="bid-thumbnail">
+    <img height="300" [src]="bid.image">
+  </div>
+
+  <div class="bid-info">
+    <h3> {{ bid.name }} </h3>
+
+    <h4> {{ bid.brand }} </h4>
+
+    <div *ngIf="bid.specs.length > 0">
+      <h4> Features </h4>
+      <ul>
+        <li *ngFor="let oneSpec of bid.specs">
+          {{ oneSpec }}
+        </li>
+      </ul>
+    </div>
+
+    <h4> Danger! </h4>
+    <button (click)="deleteBid()">
+      Delete This Bid
+    </button>
+  </div>
+</div>
