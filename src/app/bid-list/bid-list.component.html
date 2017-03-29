@@ -1,42 +1,37 @@
-
 <h2> Bid List </h2>
-
-<div class="error" *ngIf="errorMessage"> {{ errorMessage }} </div>
-
-<div class="bid-list">
-  <div *ngFor="let oneBid of bids">
-    <!-- <img [src]="oneBid.image"> -->
-    <!DOCTYPE html>
-<html>
-<head>
-<style>
-table, th, td {
-    border: 1px solid black;
-    margin: auto;
-}
-
-</style>
-</head>
-<body>
-
 <table style="width:50%">
   <tr>
     <th>Store</th>
     <th>Price</th>
+    <th>Offer</th>
   </tr>
+</table>
+<div class="error" *ngIf="errorMessage"> {{ errorMessage }} </div>
+
+<div class="bid-list">
+  <div *ngFor="let oneBid of bids">
+    <!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+  </style>
+</head>
+<body>
+<table style="width:50%">
   <tr>
     <td>{{ oneBid.name }}</td>
     <td>{{ oneBid.brand }}</td>
+    <td><button> <a href="mailto:sales@lightninglease.com?subject=Send me more info now!">Lease Me!</a> </button></td>
   </tr>
 </table>
-
 </body>
 </html>
 
-    <h3>  </h3>
-    <p>  </p>
-    <!-- <a [routerLink]="['bid', oneBid._id]">
-      View Details
-    </a> -->
-  </div>
+<!-- <h3>  </h3> -->
+<!-- <p>  </p> -->
+<!-- <a [routerLink]="['bid', oneBid._id]">
+View Details
+</a> -->
+</div>
 </div>
