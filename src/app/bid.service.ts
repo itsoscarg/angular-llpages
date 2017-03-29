@@ -4,7 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class BidService {
-BASE_URL = 'http://localhost:3000'
+BASE_URL = ''
   constructor(private myHttp: Http) { }
   getList() {
       return this.myHttp.get(`${this.BASE_URL}/api/bids`)
